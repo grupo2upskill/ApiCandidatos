@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\guito\\Documents\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj": {}
+    "C:\\Users\\Ale\\Desktop\\GitUpskill\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\guito\\Documents\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj": {
+    "C:\\Users\\Ale\\Desktop\\GitUpskill\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\guito\\Documents\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
+        "projectUniqueName": "C:\\Users\\Ale\\Desktop\\GitUpskill\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
         "projectName": "APICandidatos",
-        "projectPath": "C:\\Users\\guito\\Documents\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
-        "packagesPath": "C:\\Users\\guito\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\guito\\Documents\\ApiCandidatos\\APICandidatos\\APICandidatos\\obj\\",
+        "projectPath": "C:\\Users\\Ale\\Desktop\\GitUpskill\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
+        "packagesPath": "C:\\Users\\Ale\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ale\\Desktop\\GitUpskill\\ApiCandidatos\\APICandidatos\\APICandidatos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\guito\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ale\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
