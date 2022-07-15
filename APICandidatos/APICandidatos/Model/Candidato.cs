@@ -1,4 +1,7 @@
-﻿namespace APICandidatos.Model
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace APICandidatos.Model
 {
     public class Candidato
     {
