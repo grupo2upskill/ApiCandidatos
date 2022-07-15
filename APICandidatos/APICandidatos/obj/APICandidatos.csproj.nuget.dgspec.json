@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Marta\\Desktop\\UpSkill . NET\\APICandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj": {}
+    "C:\\Users\\guito\\Documents\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Marta\\Desktop\\UpSkill . NET\\APICandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj": {
+    "C:\\Users\\guito\\Documents\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marta\\Desktop\\UpSkill . NET\\APICandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
+        "projectUniqueName": "C:\\Users\\guito\\Documents\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
         "projectName": "APICandidatos",
-        "projectPath": "C:\\Users\\Marta\\Desktop\\UpSkill . NET\\APICandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
-        "packagesPath": "C:\\Users\\Marta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Marta\\Desktop\\UpSkill . NET\\APICandidatos\\APICandidatos\\APICandidatos\\obj\\",
+        "projectPath": "C:\\Users\\guito\\Documents\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
+        "packagesPath": "C:\\Users\\guito\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\guito\\Documents\\ApiCandidatos\\APICandidatos\\APICandidatos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Marta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\guito\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
