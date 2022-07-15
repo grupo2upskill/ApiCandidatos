@@ -7,13 +7,17 @@ namespace APICandidatos.Model
     {
         [Key]
         public int IdCandidato { get; set; }
+        [Required]
         public string Nome { get; set; }
+        [Required]
         public string Email { get; set; }
         public int? Telefone { get; set; }
         public string? Morada { get; set; }
-        public int? IdCV { get; set; }
+        [Required]
+        public int IdCV { get; set; }
         [ForeignKey("IdCV")]
         public CV CV { get; set; }
+        [Required]
         public DateTime DataNasc { get; set; }
         public byte[]? Foto { get; set; }
         public string? LinkedIn { get; set; }
