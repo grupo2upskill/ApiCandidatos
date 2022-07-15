@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APICandidatos.Model
 {
-    public class aplicacaoTrabalho
+    public class AplicacaoTrabalho
     {
         [Key]
         public int IdApl { get; set; }
