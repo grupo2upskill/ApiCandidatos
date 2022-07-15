@@ -208,19 +208,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ale\\.nuget\\packages\\": {}
+    "C:\\Users\\Marta\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ale\\Desktop\\GitUpskill\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
+      "projectUniqueName": "C:\\Users\\Marta\\Desktop\\UpSkill . NET\\APICandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
       "projectName": "APICandidatos",
-      "projectPath": "C:\\Users\\Ale\\Desktop\\GitUpskill\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
-      "packagesPath": "C:\\Users\\Ale\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ale\\Desktop\\GitUpskill\\ApiCandidatos\\APICandidatos\\APICandidatos\\obj\\",
+      "projectPath": "C:\\Users\\Marta\\Desktop\\UpSkill . NET\\APICandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
+      "packagesPath": "C:\\Users\\Marta\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Marta\\Desktop\\UpSkill . NET\\APICandidatos\\APICandidatos\\APICandidatos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Ale\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Marta\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -269,7 +269,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
