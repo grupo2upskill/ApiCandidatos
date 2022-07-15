@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ale\\Desktop\\GitUpskill\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj": {}
+    "C:\\Users\\jpluc\\OneDrive\\Documents\\UpSkill\\Mod4\\GitTeste\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ale\\Desktop\\GitUpskill\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj": {
+    "C:\\Users\\jpluc\\OneDrive\\Documents\\UpSkill\\Mod4\\GitTeste\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ale\\Desktop\\GitUpskill\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
+        "projectUniqueName": "C:\\Users\\jpluc\\OneDrive\\Documents\\UpSkill\\Mod4\\GitTeste\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
         "projectName": "APICandidatos",
-        "projectPath": "C:\\Users\\Ale\\Desktop\\GitUpskill\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
-        "packagesPath": "C:\\Users\\Ale\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ale\\Desktop\\GitUpskill\\ApiCandidatos\\APICandidatos\\APICandidatos\\obj\\",
+        "projectPath": "C:\\Users\\jpluc\\OneDrive\\Documents\\UpSkill\\Mod4\\GitTeste\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
+        "packagesPath": "C:\\Users\\jpluc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jpluc\\OneDrive\\Documents\\UpSkill\\Mod4\\GitTeste\\ApiCandidatos\\APICandidatos\\APICandidatos\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Ale\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jpluc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
