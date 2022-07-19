@@ -4,6 +4,7 @@ using APICandidatos.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APICandidatos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220719091639_testeCvCandidatos")]
+    partial class testeCvCandidatos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,6 +74,9 @@ namespace APICandidatos.Migrations
                     b.Property<byte[]>("Foto")
                         .HasColumnType("varbinary(max)");
 
+                    b.Property<int?>("IdCV")
+                        .HasColumnType("int");
+
                     b.Property<string>("LinkedIn")
                         .HasColumnType("nvarchar(max)");
 
@@ -87,6 +92,8 @@ namespace APICandidatos.Migrations
 
                     b.HasKey("IdCandidato");
 
+                    b.HasIndex("IdCV");
+
                     b.ToTable("Candidato");
                 });
 
@@ -98,9 +105,6 @@ namespace APICandidatos.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCV"), 1L, 1);
 
-                    b.Property<int?>("CandidatoIdCandidato")
-                        .HasColumnType("int");
-
                     b.Property<string>("Competencias")
                         .HasColumnType("nvarchar(max)");
 
@@ -109,9 +113,6 @@ namespace APICandidatos.Migrations
 
                     b.Property<string>("ExpProfissional")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("IdCandidato")
-                        .HasColumnType("int");
 
                     b.Property<string>("Interesses")
                         .HasColumnType("nvarchar(max)");
@@ -123,8 +124,6 @@ namespace APICandidatos.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdCV");
-
-                    b.HasIndex("CandidatoIdCandidato");
 
                     b.ToTable("CV");
                 });
@@ -227,13 +226,13 @@ namespace APICandidatos.Migrations
                     b.Navigation("OfertaEmprego");
                 });
 
-            modelBuilder.Entity("APICandidatos.Model.CV", b =>
+            modelBuilder.Entity("APICandidatos.Model.Candidato", b =>
                 {
-                    b.HasOne("APICandidatos.Model.Candidato", "Candidato")
+                    b.HasOne("APICandidatos.Model.CV", "CV")
                         .WithMany()
-                        .HasForeignKey("CandidatoIdCandidato");
+                        .HasForeignKey("IdCV");
 
-                    b.Navigation("Candidato");
+                    b.Navigation("CV");
                 });
 
             modelBuilder.Entity("APICandidatos.Model.OfertaEmprego", b =>
