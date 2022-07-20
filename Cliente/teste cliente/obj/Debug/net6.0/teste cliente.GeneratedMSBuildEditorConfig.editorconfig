@@ -8,53 +8,61 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = teste_cliente
 build_property.RootNamespace = teste_cliente
-build_property.ProjectDir = C:\Users\jpluc\Downloads\teste cliente\teste cliente\
+build_property.ProjectDir = C:\Users\jpluc\OneDrive\Documents\UpSkill\Mod4\GitTeste\ApiCandidatos\Cliente\teste cliente\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\jpluc\Downloads\teste cliente\teste cliente
+build_property.MSBuildProjectDirectory = C:\Users\jpluc\OneDrive\Documents\UpSkill\Mod4\GitTeste\ApiCandidatos\Cliente\teste cliente
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/jpluc/Downloads/teste cliente/teste cliente/Views/Candidato/Create.cshtml]
+[C:/Users/jpluc/OneDrive/Documents/UpSkill/Mod4/GitTeste/ApiCandidatos/Cliente/teste cliente/Views/Candidato/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRvXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jpluc/Downloads/teste cliente/teste cliente/Views/Candidato/Index.cshtml]
+[C:/Users/jpluc/OneDrive/Documents/UpSkill/Mod4/GitTeste/ApiCandidatos/Cliente/teste cliente/Views/Candidato/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRvXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jpluc/OneDrive/Documents/UpSkill/Mod4/GitTeste/ApiCandidatos/Cliente/teste cliente/Views/Candidato/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRvXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jpluc/OneDrive/Documents/UpSkill/Mod4/GitTeste/ApiCandidatos/Cliente/teste cliente/Views/Candidato/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jpluc/Downloads/teste cliente/teste cliente/Views/Empresa/Create.cshtml]
+[C:/Users/jpluc/OneDrive/Documents/UpSkill/Mod4/GitTeste/ApiCandidatos/Cliente/teste cliente/Views/Empresa/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jpluc/Downloads/teste cliente/teste cliente/Views/Empresa/Index.cshtml]
+[C:/Users/jpluc/OneDrive/Documents/UpSkill/Mod4/GitTeste/ApiCandidatos/Cliente/teste cliente/Views/Empresa/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wcmVzYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jpluc/Downloads/teste cliente/teste cliente/Views/Home/Index.cshtml]
+[C:/Users/jpluc/OneDrive/Documents/UpSkill/Mod4/GitTeste/ApiCandidatos/Cliente/teste cliente/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jpluc/Downloads/teste cliente/teste cliente/Views/Home/Privacy.cshtml]
+[C:/Users/jpluc/OneDrive/Documents/UpSkill/Mod4/GitTeste/ApiCandidatos/Cliente/teste cliente/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jpluc/Downloads/teste cliente/teste cliente/Views/Shared/Error.cshtml]
+[C:/Users/jpluc/OneDrive/Documents/UpSkill/Mod4/GitTeste/ApiCandidatos/Cliente/teste cliente/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jpluc/Downloads/teste cliente/teste cliente/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/jpluc/OneDrive/Documents/UpSkill/Mod4/GitTeste/ApiCandidatos/Cliente/teste cliente/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jpluc/Downloads/teste cliente/teste cliente/Views/_ViewImports.cshtml]
+[C:/Users/jpluc/OneDrive/Documents/UpSkill/Mod4/GitTeste/ApiCandidatos/Cliente/teste cliente/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jpluc/Downloads/teste cliente/teste cliente/Views/_ViewStart.cshtml]
+[C:/Users/jpluc/OneDrive/Documents/UpSkill/Mod4/GitTeste/ApiCandidatos/Cliente/teste cliente/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/jpluc/Downloads/teste cliente/teste cliente/Views/Shared/_Layout.cshtml]
+[C:/Users/jpluc/OneDrive/Documents/UpSkill/Mod4/GitTeste/ApiCandidatos/Cliente/teste cliente/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-zyxsnsq8nx

@@ -82,7 +82,62 @@ namespace teste_cliente.Models
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            Candidato candidato = new Candidato();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("http://localhost:5167/api/Candidato/" + id))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    candidato = JsonConvert.DeserializeObject<Candidato>(apiResponse);
+                }
+            }
+            return View(candidato);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(Models.Candidato candidato)
+        {
+            Candidato c = new Candidato();
+            if (ModelState.IsValid)
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var content = new MultipartFormDataContent();
+                    content.Add(new StringContent(candidato.IdCandidato.ToString()), "Id");
+                    content.Add(new StringContent(candidato.Nome), "Nome");
+                    content.Add(new StringContent(candidato.Morada), "Morada");
+                    content.Add(new StringContent(candidato.Telefone.ToString()), "Telefone");
+                    content.Add(new StringContent(candidato.Email), "Email");
+                    content.Add(new StringContent(candidato.DataNasc.ToString()), "Data Nascimento");
+                    content.Add(new StringContent(candidato.Facebook), "Facebook");
+                    content.Add(new StringContent(candidato.LinkedIn), "LinkedIn");
+                    content.Add(new StringContent(candidato.Foto.ToString()), "Foto");
+                    using (var response = await httpClient.PutAsync("http://localhost:5167/api/Candidato/", content))
+                    {
+                        string apiResponse = await response.Content.ReadAsStringAsync();
+                        ViewBag.Result = "Success";
+                        c = JsonConvert.DeserializeObject<Candidato>(apiResponse);
+                    }
 
+                }
+            }
+            return View(c);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.DeleteAsync("http://localhost:5167/api/Candidato/" + id))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                }
+            }
+            return RedirectToAction("Index");
+        }
 
         /*
         // GET: api/Candidato
