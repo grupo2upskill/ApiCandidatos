@@ -8,8 +8,6 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Text;
 
-using teste_cliente.Models;
-
 
 namespace teste_cliente.Models
 {
@@ -97,24 +95,21 @@ namespace teste_cliente.Models
             return View(candidato);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(Models.Candidato candidato)
+        public async Task<IActionResult> Edit(Models.Candidato candidato, IFormFile file)
         {
-            Candidato c = new Candidato();
-            if (ModelState.IsValid)
+            if (Request.Form.Files.Count > 0)
             {
+                file = Request.Form.Files.FirstOrDefault();
+                var dataStream = new MemoryStream();
+                file.CopyToAsync(dataStream);
+                candidato.Foto = dataStream.ToArray();
+            }
+            Candidato c = new Candidato();
+            
                 using (var httpClient = new HttpClient())
                 {
-                    var content = new MultipartFormDataContent();
-                    content.Add(new StringContent(candidato.IdCandidato.ToString()), "Id");
-                    content.Add(new StringContent(candidato.Nome), "Nome");
-                    content.Add(new StringContent(candidato.Morada), "Morada");
-                    content.Add(new StringContent(candidato.Telefone.ToString()), "Telefone");
-                    content.Add(new StringContent(candidato.Email), "Email");
-                    content.Add(new StringContent(candidato.DataNasc.ToString()), "Data Nascimento");
-                    content.Add(new StringContent(candidato.Facebook), "Facebook");
-                    content.Add(new StringContent(candidato.LinkedIn), "LinkedIn");
-                    content.Add(new StringContent(candidato.Foto.ToString()), "Foto");
-                    using (var response = await httpClient.PutAsync("http://localhost:5167/api/Candidato/", content))
+                    StringContent content = new StringContent(JsonConvert.SerializeObject(candidato), Encoding.UTF8, "application/json");
+                    using (var response = await httpClient.PutAsync("http://localhost:5167/api/Candidato/" +candidato.IdCandidato, content))
                     {
                         string apiResponse = await response.Content.ReadAsStringAsync();
                         ViewBag.Result = "Success";
@@ -122,8 +117,8 @@ namespace teste_cliente.Models
                     }
 
                 }
-            }
-            return View(c);
+            
+            return RedirectToAction("Index");
         }
 
         [HttpPost]

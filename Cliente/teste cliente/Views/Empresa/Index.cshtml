@@ -1,4 +1,4 @@
-﻿@model IEnumerable<teste_cliente.Model.Empresa>
+﻿@model IEnumerable<teste_cliente.Models.Empresa>
 
 @{
     ViewData["Title"] = "Index";
@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table" id="Tabela">
     <thead>
         <tr>
             <th>
@@ -67,11 +67,21 @@
                 @Html.DisplayFor(modelItem => item.Facebook)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { id=item.IdEmpresa}) |
+                @Html.ActionLink("Details", "Details", new { id=item.IdEmpresa}) |
+                @Html.ActionLink("Delete", "Delete", new {id=item.IdEmpresa}, 
+new { onclick = "return confirm('Deseja realmente apagar esta Empresa ?');" })
             </td>
         </tr>
 }
     </tbody>
 </table>
+@section Scripts {
+<script>
+$(document).ready(function () {
+    $('#Tabela').DataTable({
+        pagingType: 'full_numbers',
+    });
+});
+</script>
+}

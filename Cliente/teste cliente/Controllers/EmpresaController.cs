@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;
-using teste_cliente.Model;
-
 
 namespace teste_cliente.Models
 {
@@ -28,6 +20,7 @@ namespace teste_cliente.Models
 
             return View(empresaList);
         }
+
         [HttpGet]
         public IActionResult Get()
         {
@@ -57,129 +50,100 @@ namespace teste_cliente.Models
         }
 
 
-                [HttpPost]
-                public async Task<IActionResult> Create(Model.Empresa empresa)
+        [HttpPost]
+        public async Task<IActionResult> Create(Models.Empresa empresa)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var httpClient = new HttpClient())
                 {
-                    if (ModelState.IsValid)
+                    StringContent content = new StringContent(JsonConvert.SerializeObject(empresa), Encoding.UTF8, "application/json");
+                    using (var response = await httpClient.PostAsync("http://localhost:5167/api/Empresa/", content))
                     {
-                        using (var httpClient = new HttpClient())
-                        {
-                            StringContent content = new StringContent(JsonConvert.SerializeObject(empresa), Encoding.UTF8, "application/json");
-                            using (var response = await httpClient.PostAsync("http://localhost:5167/api/Empresa/", content))
-                            {
-                                string apiResponse = await response.Content.ReadAsStringAsync();
-                                empresa = JsonConvert.DeserializeObject<Empresa>(apiResponse);
-                            }
-                        }
+                        string apiResponse = await response.Content.ReadAsStringAsync();
+                        empresa = JsonConvert.DeserializeObject<Empresa>(apiResponse);
+                    }
+                }
                 return RedirectToAction("Index");
             }
             return RedirectToAction("Index");
         }
 
 
-/*
-
-                // GET: api/Candidato
-                [HttpGet]
-                public async Task<ActionResult<IEnumerable<Candidato>>> GetCandidato()
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            Empresa empresa = new Empresa();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("http://localhost:5167/api/Empresa/" + id))
                 {
-                  if (_context.Candidato == null)
-                  {
-                      return NotFound();
-                  }
-                    return await _context.Candidato.ToListAsync();
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    empresa = JsonConvert.DeserializeObject<Empresa>(apiResponse);
+
                 }
+                return View(empresa);
+            }
+        }
 
-                // GET: api/Candidato/5
-                [HttpGet("{id}")]
-                public async Task<ActionResult<Candidato>> GetCandidato(int id)
+        [HttpPost]
+        public async Task<IActionResult> Edit(Models.Empresa empresa)
+        {
+            Empresa e = new Empresa();
+
+            using (var httpClient = new HttpClient())
+            {
+
+
+                StringContent content = new StringContent(JsonConvert.SerializeObject(empresa), Encoding.UTF8, "application/json");
+
+                using (var response = await httpClient.PutAsync("http://localhost:5167/api/Empresa/" + empresa.IdEmpresa, content))
                 {
-                  if (_context.Candidato == null)
-                  {
-                      return NotFound();
-                  }
-                    var candidato = await _context.Candidato.FindAsync(id);
-
-                    if (candidato == null)
-                    {
-                        return NotFound();
-                    }
-
-                    return candidato;
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    ViewBag.Result = "Success";
+                    e = JsonConvert.DeserializeObject<Empresa>(apiResponse);
                 }
+                return RedirectToAction("Index");
 
-                // PUT: api/Candidato/5
-                // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-                [HttpPut("{id}")]
-                public async Task<IActionResult> PutCandidato(int id, Candidato candidato)
+            }
+
+            return View(e);
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            Empresa empresa = new Empresa();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("http://localhost:5167/api/Empresa/" + id))
                 {
-                    if (id != candidato.IdCandidato)
-                    {
-                        return BadRequest();
-                    }
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    empresa = JsonConvert.DeserializeObject<Empresa>(apiResponse);
 
-                    _context.Entry(candidato).State = EntityState.Modified;
-
-                    try
-                    {
-                        await _context.SaveChangesAsync();
-                    }
-                    catch (DbUpdateConcurrencyException)
-                    {
-                        if (!CandidatoExists(id))
-                        {
-                            return NotFound();
-                        }
-                        else
-                        {
-                            throw;
-                        }
-                    }
-
-                    return NoContent();
                 }
+                return View(empresa);
+            }
+        }
 
-                // POST: api/Candidato
-                // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-                [HttpPost]
-                public async Task<ActionResult<Candidato>> PostCandidato(Candidato candidato)
+
+
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.DeleteAsync("http://localhost:5167/api/Empresa/" + id))
                 {
-                  if (_context.Candidato == null)
-                  {
-                      return Problem("Entity set 'ApplicationDbContext.Candidato'  is null.");
-                  }
-                    _context.Candidato.Add(candidato);
-                    await _context.SaveChangesAsync();
-
-                    return CreatedAtAction("GetCandidato", new { id = candidato.IdCandidato }, candidato);
-                }
-
-                // DELETE: api/Candidato/5
-                [HttpDelete("{id}")]
-                public async Task<IActionResult> DeleteCandidato(int id)
-                {
-                    if (_context.Candidato == null)
-                    {
-                        return NotFound();
-                    }
-                    var candidato = await _context.Candidato.FindAsync(id);
-                    if (candidato == null)
-                    {
-                        return NotFound();
-                    }
-
-                    _context.Candidato.Remove(candidato);
-                    await _context.SaveChangesAsync();
-
-                    return NoContent();
-                }
-
-                private bool CandidatoExists(int id)
-                {
-                    return (_context.Candidato?.Any(e => e.IdCandidato == id)).GetValueOrDefault();
+                    string apiResponse = await response.Content.ReadAsStringAsync();
                 }
             }
-                */
+            return RedirectToAction("Index");
+        }
+
     }
 }
+
 
