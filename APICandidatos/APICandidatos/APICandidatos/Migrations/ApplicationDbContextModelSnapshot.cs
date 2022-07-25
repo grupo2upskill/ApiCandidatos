@@ -72,9 +72,12 @@ namespace APICandidatos.Migrations
                     b.Property<byte[]>("FileCV")
                         .HasColumnType("varbinary(max)");
 
+<<<<<<< Updated upstream
+=======
                     b.Property<byte[]>("Foto")
                         .HasColumnType("varbinary(max)");
 
+>>>>>>> Stashed changes
                     b.Property<string>("LinkedIn")
                         .HasColumnType("nvarchar(max)");
 
