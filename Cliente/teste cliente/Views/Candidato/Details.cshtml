@@ -1,10 +1,10 @@
 ﻿@model teste_cliente.Models.Candidato
 
 @{
-    ViewData["Title"] = "Get";
+    ViewData["Title"] = "Details";
 }
 
-<h1>Get</h1>
+<h1>Details</h1>
 
 <div>
     <h4>Candidato</h4>
@@ -67,6 +67,6 @@
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdCandidato}) |
     <a asp-action="Index">Back to List</a>
 </div>

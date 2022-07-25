@@ -120,8 +120,23 @@ namespace teste_cliente.Models
             
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            Candidato candidato = new Candidato();
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("http://localhost:5167/api/Candidato/" + id))
+                {
+                    string apiResponse = await response.Content.ReadAsStringAsync();
+                    candidato = JsonConvert.DeserializeObject<Candidato>(apiResponse);
 
-        [HttpPost]
+                }
+                return View(candidato);
+            }
+        }
+
+            [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
             using (var httpClient = new HttpClient())

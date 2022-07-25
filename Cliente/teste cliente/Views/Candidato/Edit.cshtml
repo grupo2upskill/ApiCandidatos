@@ -43,10 +43,10 @@
                 <span asp-validation-for="DataNasc" class="text-danger"></span>
             </div>
             <div class="form-group">
-                @*@if (@Model.Foto != null)
+                @if (@Model.Foto != null)
                     {
-                        <img class="Foto" object-fit:cover" src="data:foto/*;base64,@(Convert.ToBase64String(@Model.Foto))">
-                    }*@
+                        <img class="Foto" id="Foto" object-fit:cover" src="data:foto/*;base64,@(Convert.ToBase64String(@Model.Foto))">
+                    }
                 <label asp-for="Foto" style="width: 100%;" class="control-label"></label>
                     <input type="file"
                            accept=".png,.jpg,.jpeg,.gif,.tif"
