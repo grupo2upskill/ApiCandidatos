@@ -69,9 +69,15 @@ namespace APICandidatos.Migrations
                     b.Property<string>("Facebook")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte[]>("FileCV")
+                        .HasColumnType("varbinary(max)");
+
+<<<<<<< Updated upstream
+=======
                     b.Property<byte[]>("Foto")
                         .HasColumnType("varbinary(max)");
 
+>>>>>>> Stashed changes
                     b.Property<string>("LinkedIn")
                         .HasColumnType("nvarchar(max)");
 
@@ -150,6 +156,9 @@ namespace APICandidatos.Migrations
                     b.Property<string>("Localidade")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte[]>("LogoEmpresa")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<int?>("NoFuncionarios")
                         .HasColumnType("int");
 
@@ -200,6 +209,9 @@ namespace APICandidatos.Migrations
                     b.Property<string>("Titulo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("VagaDisponivel")
+                        .HasColumnType("bit");
 
                     b.HasKey("IdOferta");
 

@@ -18,7 +18,6 @@ namespace APICandidatos.Model
         public byte[]? Foto { get; set; }
         public string? LinkedIn { get; set; }
         public string? Facebook { get; set; }
-
-
+        public byte[]? FileCV { get; set; }
     }
 }

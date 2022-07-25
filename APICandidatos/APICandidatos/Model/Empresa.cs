@@ -15,7 +15,6 @@ namespace APICandidatos.Model
         public string? ZonaAtuacao { get; set; }
         public string? LinkedIn { get; set; }
         public string? Facebook { get; set; }
-
-
+        public byte[]? LogoEmpresa { get; set; }
     }
 }
