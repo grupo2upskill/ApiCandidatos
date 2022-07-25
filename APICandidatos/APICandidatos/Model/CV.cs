@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APICandidatos.Model
 {
@@ -13,6 +14,7 @@ namespace APICandidatos.Model
         public string? Competencias { get; set; }
         public string? Interesses { get; set; }
         public int? IdCandidato { get; set; }
+        [ForeignKey("IdCandidato")]
         public Candidato? Candidato { get; set; }
     }
 }

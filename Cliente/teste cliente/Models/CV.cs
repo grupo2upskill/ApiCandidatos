@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace teste_cliente.Models
 {
@@ -13,5 +14,9 @@ namespace teste_cliente.Models
         public string? ExpProfissional { get; set; }
         public string? Competencias { get; set; }
         public string? Interesses { get; set; }
+
+        public int IdCandidato { get; set; }
+        [ForeignKey("IdCandidato")]
+        public Candidato Candidato { get; set; }
     }
 }
