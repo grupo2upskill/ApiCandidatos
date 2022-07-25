@@ -69,11 +69,11 @@ namespace APICandidatos.Migrations
                     b.Property<string>("Facebook")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("Foto")
+                    b.Property<byte[]>("FileCV")
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<int>("IdCV")
-                        .HasColumnType("int");
+                    b.Property<byte[]>("Foto")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("LinkedIn")
                         .HasColumnType("nvarchar(max)");
@@ -90,8 +90,6 @@ namespace APICandidatos.Migrations
 
                     b.HasKey("IdCandidato");
 
-                    b.HasIndex("IdCV");
-
                     b.ToTable("Candidato");
                 });
 
@@ -103,6 +101,9 @@ namespace APICandidatos.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCV"), 1L, 1);
 
+                    b.Property<int?>("CandidatoIdCandidato")
+                        .HasColumnType("int");
+
                     b.Property<string>("Competencias")
                         .HasColumnType("nvarchar(max)");
 
@@ -111,6 +112,9 @@ namespace APICandidatos.Migrations
 
                     b.Property<string>("ExpProfissional")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("IdCandidato")
+                        .HasColumnType("int");
 
                     b.Property<string>("Interesses")
                         .HasColumnType("nvarchar(max)");
@@ -122,6 +126,8 @@ namespace APICandidatos.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdCV");
+
+                    b.HasIndex("CandidatoIdCandidato");
 
                     b.ToTable("CV");
                 });
@@ -146,6 +152,9 @@ namespace APICandidatos.Migrations
 
                     b.Property<string>("Localidade")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("LogoEmpresa")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<int?>("NoFuncionarios")
                         .HasColumnType("int");
@@ -198,6 +207,9 @@ namespace APICandidatos.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool?>("VagaDisponivel")
+                        .HasColumnType("bit");
+
                     b.HasKey("IdOferta");
 
                     b.HasIndex("IdEmpresa");
@@ -224,15 +236,13 @@ namespace APICandidatos.Migrations
                     b.Navigation("OfertaEmprego");
                 });
 
-            modelBuilder.Entity("APICandidatos.Model.Candidato", b =>
+            modelBuilder.Entity("APICandidatos.Model.CV", b =>
                 {
-                    b.HasOne("APICandidatos.Model.CV", "CV")
+                    b.HasOne("APICandidatos.Model.Candidato", "Candidato")
                         .WithMany()
-                        .HasForeignKey("IdCV")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CandidatoIdCandidato");
 
-                    b.Navigation("CV");
+                    b.Navigation("Candidato");
                 });
 
             modelBuilder.Entity("APICandidatos.Model.OfertaEmprego", b =>

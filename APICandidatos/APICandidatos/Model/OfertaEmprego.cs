@@ -18,5 +18,6 @@ namespace APICandidatos.Model
         public string? RegimeTrabalho { get; set; }
         public string? TipoContrato { get; set; }
         public string? Requisitos { get; set; }
+        public bool? VagaDisponivel { get; set; }
     }
 }

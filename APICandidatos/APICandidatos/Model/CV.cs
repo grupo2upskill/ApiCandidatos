@@ -12,5 +12,7 @@ namespace APICandidatos.Model
         public string? ExpProfissional { get; set; }
         public string? Competencias { get; set; }
         public string? Interesses { get; set; }
+        public int? IdCandidato { get; set; }
+        public Candidato? Candidato { get; set; }
     }
 }
