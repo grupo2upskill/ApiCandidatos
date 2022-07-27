@@ -4,6 +4,7 @@ using APICandidatos.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APICandidatos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220727100858_4")]
+    partial class _4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,6 +45,10 @@ namespace APICandidatos.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("IdApl");
+
+                    b.HasIndex("IdCandidato");
+
+                    b.HasIndex("IdOferta");
 
                     b.ToTable("AplicacaoTrabalho");
                 });
@@ -204,6 +210,25 @@ namespace APICandidatos.Migrations
                     b.HasKey("IdOferta");
 
                     b.ToTable("OfertaEmprego");
+                });
+
+            modelBuilder.Entity("APICandidatos.Model.AplicacaoTrabalho", b =>
+                {
+                    b.HasOne("APICandidatos.Model.Candidato", "Candidato")
+                        .WithMany()
+                        .HasForeignKey("IdCandidato")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("APICandidatos.Model.OfertaEmprego", "OfertaEmprego")
+                        .WithMany()
+                        .HasForeignKey("IdOferta")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Candidato");
+
+                    b.Navigation("OfertaEmprego");
                 });
 #pragma warning restore 612, 618
         }

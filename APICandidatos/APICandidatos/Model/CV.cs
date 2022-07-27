@@ -13,6 +13,6 @@ namespace APICandidatos.Model
         public string? Competencias { get; set; }
         public string? Interesses { get; set; }
         public int? IdCandidato { get; set; }
-        public Candidato? Candidato { get; set; }
+        //public Candidato? Candidato { get; set; }
     }
 }

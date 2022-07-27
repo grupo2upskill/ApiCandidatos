@@ -52,14 +52,9 @@ namespace APICandidatos.Controllers
 
         // PUT: api/CV/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCV(int id, CV cV)
+        [HttpPut]
+        public async Task<IActionResult> PutCV(CV cV)
         {
-            if (id != cV.IdCV)
-            {
-                return BadRequest();
-            }
-
             _context.Entry(cV).State = EntityState.Modified;
 
             try
@@ -68,7 +63,7 @@ namespace APICandidatos.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CVExists(id))
+                if (!CVExists(cV.IdCV))
                 {
                     return NotFound();
                 }
