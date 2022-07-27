@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\guito\\Documents\\ApiCandidatos\\Cliente\\teste cliente\\teste cliente.csproj": {}
+    "C:\\Users\\Marta\\Desktop\\UpSkill . NET\\CandidatosTeste\\APICandidatos\\Cliente\\teste cliente\\teste cliente.csproj": {}
   },
   "projects": {
-    "C:\\Users\\guito\\Documents\\ApiCandidatos\\Cliente\\teste cliente\\teste cliente.csproj": {
+    "C:\\Users\\Marta\\Desktop\\UpSkill . NET\\CandidatosTeste\\APICandidatos\\Cliente\\teste cliente\\teste cliente.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\guito\\Documents\\ApiCandidatos\\Cliente\\teste cliente\\teste cliente.csproj",
+        "projectUniqueName": "C:\\Users\\Marta\\Desktop\\UpSkill . NET\\CandidatosTeste\\APICandidatos\\Cliente\\teste cliente\\teste cliente.csproj",
         "projectName": "teste cliente",
-        "projectPath": "C:\\Users\\guito\\Documents\\ApiCandidatos\\Cliente\\teste cliente\\teste cliente.csproj",
-        "packagesPath": "C:\\Users\\guito\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\guito\\Documents\\ApiCandidatos\\Cliente\\teste cliente\\obj\\",
+        "projectPath": "C:\\Users\\Marta\\Desktop\\UpSkill . NET\\CandidatosTeste\\APICandidatos\\Cliente\\teste cliente\\teste cliente.csproj",
+        "packagesPath": "C:\\Users\\Marta\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Marta\\Desktop\\UpSkill . NET\\CandidatosTeste\\APICandidatos\\Cliente\\teste cliente\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\guito\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Marta\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
