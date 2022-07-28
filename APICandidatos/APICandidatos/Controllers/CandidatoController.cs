@@ -1,83 +1,124 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using APICandidatos.Data;
+using APICandidatos.Model;
 
 namespace APICandidatos.Controllers
 {
-    public class CandidatoController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CandidatoController : ControllerBase
     {
-        // GET: CandidatoController
-        public ActionResult Index()
+        private readonly ApplicationDbContext _context;
+
+        public CandidatoController(ApplicationDbContext context)
         {
-            return View();
+            _context = context;
         }
 
-        // GET: CandidatoController/Details/5
-        public ActionResult Details(int id)
+        // GET: api/Candidato
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Candidato>>> GetCandidato()
         {
-            return View();
+          if (_context.Candidato == null)
+          {
+              return NotFound();
+          }
+            return await _context.Candidato.ToListAsync();
         }
 
-        // GET: CandidatoController/Create
-        public ActionResult Create()
+        // GET: api/Candidato/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Candidato>> GetCandidato(int id)
         {
-            return View();
+          if (_context.Candidato == null)
+          {
+              return NotFound();
+          }
+            var candidato = await _context.Candidato.FindAsync(id);
+
+            if (candidato == null)
+            {
+                return NotFound();
+            }
+
+            return candidato;
         }
 
-        // POST: CandidatoController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        // PUT: api/Candidato/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutCandidato(int id, Candidato candidato)
         {
+            if (id != candidato.IdCandidato)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(candidato).State = EntityState.Modified;
+
             try
             {
-                return RedirectToAction(nameof(Index));
+                await _context.SaveChangesAsync();
             }
-            catch
+            catch (DbUpdateConcurrencyException)
             {
-                return View();
+                if (!CandidatoExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
             }
+
+            return NoContent();
         }
 
-        // GET: CandidatoController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: CandidatoController/Edit/5
+        // POST: api/Candidato
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<ActionResult<Candidato>> PostCandidato(Candidato candidato)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+          if (_context.Candidato == null)
+          {
+              return Problem("Entity set 'ApplicationDbContext.Candidato'  is null.");
+          }
+            _context.Candidato.Add(candidato);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetCandidato", new { id = candidato.IdCandidato }, candidato);
         }
 
-        // GET: CandidatoController/Delete/5
-        public ActionResult Delete(int id)
+        // DELETE: api/Candidato/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCandidato(int id)
         {
-            return View();
+            if (_context.Candidato == null)
+            {
+                return NotFound();
+            }
+            var candidato = await _context.Candidato.FindAsync(id);
+            if (candidato == null)
+            {
+                return NotFound();
+            }
+
+            _context.Candidato.Remove(candidato);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
 
-        // POST: CandidatoController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        private bool CandidatoExists(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return (_context.Candidato?.Any(e => e.IdCandidato == id)).GetValueOrDefault();
         }
     }
 }

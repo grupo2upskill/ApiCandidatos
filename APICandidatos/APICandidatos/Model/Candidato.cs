@@ -14,15 +14,12 @@ namespace APICandidatos.Model
         public int? Telefone { get; set; }
         public string? Morada { get; set; }
         [Required]
-        public int IdCV { get; set; }
-        [ForeignKey("IdCV")]
-        public CV CV { get; set; }
-        [Required]
         public DateTime DataNasc { get; set; }
         public byte[]? Foto { get; set; }
         public string? LinkedIn { get; set; }
         public string? Facebook { get; set; }
-
-
+        public byte[]? FileCV { get; set; }
+        public List<CV> CVs { get; set; }
+        public List<AplicacaoTrabalho> AplicacaoTrabalhos { get; set; }
     }
 }

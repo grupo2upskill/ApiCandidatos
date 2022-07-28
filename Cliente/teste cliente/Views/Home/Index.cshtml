@@ -1,0 +1,32 @@
+﻿@model IEnumerable<OfertaEmprego>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div id="hero">
+    <div class="container">
+      <div class="row d-flex justify-content-center ">
+        <div class="col-4 mt-10">
+          <form class="d-flex" id="formSearch" method="post">
+            <input class="form-control me-sm-2" type="text" id="search" name="search" placeholder="Buscar um emprego">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit" id="submitSearch">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div id="Ofertas" class="container">
+    @foreach (var item in Model)
+    {
+        <div class="col-4 mg-4">
+            <div class="card">
+                <div class="info-card">
+                    <h4>@item.Titulo</h4>
+                    <p>@item.Empresa</p>
+                    <p>@item.Salario</p>
+                    <a asp-action="Details" class="btn btn-primary form-control" asp-route-id="@item.IdOferta">Saber Mais</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

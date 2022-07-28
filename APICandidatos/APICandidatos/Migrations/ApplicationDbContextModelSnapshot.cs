@@ -30,6 +30,9 @@ namespace APICandidatos.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdApl"), 1L, 1);
 
+                    b.Property<int?>("CandidatoIdCandidato")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DataAplicacao")
                         .HasColumnType("datetime2");
 
@@ -39,14 +42,17 @@ namespace APICandidatos.Migrations
                     b.Property<int>("IdOferta")
                         .HasColumnType("int");
 
+                    b.Property<int?>("OfertaEmpregoIdOferta")
+                        .HasColumnType("int");
+
                     b.Property<bool>("aplicacaoAceite")
                         .HasColumnType("bit");
 
                     b.HasKey("IdApl");
 
-                    b.HasIndex("IdCandidato");
+                    b.HasIndex("CandidatoIdCandidato");
 
-                    b.HasIndex("IdOferta");
+                    b.HasIndex("OfertaEmpregoIdOferta");
 
                     b.ToTable("AplicacaoTrabalho");
                 });
@@ -69,11 +75,11 @@ namespace APICandidatos.Migrations
                     b.Property<string>("Facebook")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("Foto")
+                    b.Property<byte[]>("FileCV")
                         .HasColumnType("varbinary(max)");
 
-                    b.Property<int>("IdCV")
-                        .HasColumnType("int");
+                    b.Property<byte[]>("Foto")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("LinkedIn")
                         .HasColumnType("nvarchar(max)");
@@ -90,8 +96,6 @@ namespace APICandidatos.Migrations
 
                     b.HasKey("IdCandidato");
 
-                    b.HasIndex("IdCV");
-
                     b.ToTable("Candidato");
                 });
 
@@ -103,6 +107,9 @@ namespace APICandidatos.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCV"), 1L, 1);
 
+                    b.Property<int?>("CandidatoIdCandidato")
+                        .HasColumnType("int");
+
                     b.Property<string>("Competencias")
                         .HasColumnType("nvarchar(max)");
 
@@ -111,6 +118,9 @@ namespace APICandidatos.Migrations
 
                     b.Property<string>("ExpProfissional")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("IdCandidato")
+                        .HasColumnType("int");
 
                     b.Property<string>("Interesses")
                         .HasColumnType("nvarchar(max)");
@@ -122,6 +132,8 @@ namespace APICandidatos.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdCV");
+
+                    b.HasIndex("CandidatoIdCandidato");
 
                     b.ToTable("CV");
                 });
@@ -173,6 +185,9 @@ namespace APICandidatos.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdOferta"), 1L, 1);
 
+                    b.Property<int?>("EmpresaIdEmpresa")
+                        .HasColumnType("int");
+
                     b.Property<int>("IdEmpresa")
                         .HasColumnType("int");
 
@@ -198,52 +213,56 @@ namespace APICandidatos.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool?>("VagaDisponivel")
+                        .HasColumnType("bit");
+
                     b.HasKey("IdOferta");
 
-                    b.HasIndex("IdEmpresa");
+                    b.HasIndex("EmpresaIdEmpresa");
 
                     b.ToTable("OfertaEmprego");
                 });
 
             modelBuilder.Entity("APICandidatos.Model.AplicacaoTrabalho", b =>
                 {
-                    b.HasOne("APICandidatos.Model.Candidato", "Candidato")
-                        .WithMany()
-                        .HasForeignKey("IdCandidato")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("APICandidatos.Model.Candidato", null)
+                        .WithMany("AplicacaoTrabalhos")
+                        .HasForeignKey("CandidatoIdCandidato");
 
-                    b.HasOne("APICandidatos.Model.OfertaEmprego", "OfertaEmprego")
-                        .WithMany()
-                        .HasForeignKey("IdOferta")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Candidato");
-
-                    b.Navigation("OfertaEmprego");
+                    b.HasOne("APICandidatos.Model.OfertaEmprego", null)
+                        .WithMany("AplicacaoTrabalhos")
+                        .HasForeignKey("OfertaEmpregoIdOferta");
                 });
 
-            modelBuilder.Entity("APICandidatos.Model.Candidato", b =>
+            modelBuilder.Entity("APICandidatos.Model.CV", b =>
                 {
-                    b.HasOne("APICandidatos.Model.CV", "CV")
-                        .WithMany()
-                        .HasForeignKey("IdCV")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CV");
+                    b.HasOne("APICandidatos.Model.Candidato", null)
+                        .WithMany("CVs")
+                        .HasForeignKey("CandidatoIdCandidato");
                 });
 
             modelBuilder.Entity("APICandidatos.Model.OfertaEmprego", b =>
                 {
-                    b.HasOne("APICandidatos.Model.Empresa", "Empresa")
-                        .WithMany()
-                        .HasForeignKey("IdEmpresa")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("APICandidatos.Model.Empresa", null)
+                        .WithMany("OfertaEmpregos")
+                        .HasForeignKey("EmpresaIdEmpresa");
+                });
 
-                    b.Navigation("Empresa");
+            modelBuilder.Entity("APICandidatos.Model.Candidato", b =>
+                {
+                    b.Navigation("AplicacaoTrabalhos");
+
+                    b.Navigation("CVs");
+                });
+
+            modelBuilder.Entity("APICandidatos.Model.Empresa", b =>
+                {
+                    b.Navigation("OfertaEmpregos");
+                });
+
+            modelBuilder.Entity("APICandidatos.Model.OfertaEmprego", b =>
+                {
+                    b.Navigation("AplicacaoTrabalhos");
                 });
 #pragma warning restore 612, 618
         }
