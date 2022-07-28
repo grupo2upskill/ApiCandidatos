@@ -20,7 +20,7 @@ namespace APICandidatos.Model
         public string? Facebook { get; set; }
         public byte[]? FileCV { get; set; }
 
-        //public List<CV> CVs { get; set; }
-        public virtual List<AplicacaoTrabalho> AplicacaoTrabalhos { get; set; }
+        public List<CV> CVs { get; set; }
+        public List<AplicacaoTrabalho> AplicacaoTrabalhos { get; set; }
     }
 }

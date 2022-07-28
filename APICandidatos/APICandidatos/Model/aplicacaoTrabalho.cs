@@ -11,10 +11,8 @@ namespace APICandidatos.Model
         [ForeignKey("FK_OfertaEmprego")]
         public int IdOferta { get; set; }
 
-
         [ForeignKey("FK_Candidato")]
         public int IdCandidato { get; set; }
-
 
         public DateTime DataAplicacao { get; set; } = DateTime.Now;
 

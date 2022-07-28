@@ -4,6 +4,7 @@ using APICandidatos.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APICandidatos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220728104304_fkteste1001")]
+    partial class fkteste1001
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -185,6 +187,9 @@ namespace APICandidatos.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdOferta"), 1L, 1);
 
+                    b.Property<int?>("EmpresaIdEmpresa")
+                        .HasColumnType("int");
+
                     b.Property<int>("IdEmpresa")
                         .HasColumnType("int");
 
@@ -215,7 +220,7 @@ namespace APICandidatos.Migrations
 
                     b.HasKey("IdOferta");
 
-                    b.HasIndex("IdEmpresa");
+                    b.HasIndex("EmpresaIdEmpresa");
 
                     b.ToTable("OfertaEmprego");
                 });
@@ -243,13 +248,10 @@ namespace APICandidatos.Migrations
 
             modelBuilder.Entity("APICandidatos.Model.OfertaEmprego", b =>
                 {
-                    b.HasOne("APICandidatos.Model.Empresa", "empresa")
+                    b.HasOne("APICandidatos.Model.Empresa", null)
                         .WithMany("OfertaEmpregos")
-                        .HasForeignKey("IdEmpresa")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.Navigation("empresa");
+                        .HasForeignKey("EmpresaIdEmpresa")
+                        .OnDelete(DeleteBehavior.NoAction);
                 });
 
             modelBuilder.Entity("APICandidatos.Model.Candidato", b =>

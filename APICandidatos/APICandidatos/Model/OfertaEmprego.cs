@@ -8,8 +8,10 @@ namespace APICandidatos.Model
         [Key]
         public int IdOferta { get; set; }
 
-        [ForeignKey("FK_Empresa")]
+        
         public int IdEmpresa { get; set; }
+        [ForeignKey("IdEmpresa")]
+        public Empresa empresa { get; set; }
 
         public string Titulo { get; set; }
         public float? Salario { get; set; }
