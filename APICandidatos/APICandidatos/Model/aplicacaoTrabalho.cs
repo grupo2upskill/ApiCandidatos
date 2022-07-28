@@ -8,7 +8,7 @@ namespace APICandidatos.Model
         [Key]
         public int IdApl { get; set; }
 
-        [ForeignKey("FK_Oferta")]
+        [ForeignKey("FK_OfertaEmprego")]
         public int IdOferta { get; set; }
 
 

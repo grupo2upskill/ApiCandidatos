@@ -4,6 +4,7 @@ using APICandidatos.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APICandidatos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220728094439_teste103")]
+    partial class teste103
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -107,6 +109,9 @@ namespace APICandidatos.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCV"), 1L, 1);
 
+                    b.Property<int?>("CandidatoIdCandidato")
+                        .HasColumnType("int");
+
                     b.Property<string>("Competencias")
                         .HasColumnType("nvarchar(max)");
 
@@ -129,6 +134,8 @@ namespace APICandidatos.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IdCV");
+
+                    b.HasIndex("CandidatoIdCandidato");
 
                     b.ToTable("CV");
                 });
@@ -180,6 +187,9 @@ namespace APICandidatos.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdOferta"), 1L, 1);
 
+                    b.Property<int?>("EmpresaIdEmpresa")
+                        .HasColumnType("int");
+
                     b.Property<int>("IdEmpresa")
                         .HasColumnType("int");
 
@@ -210,6 +220,8 @@ namespace APICandidatos.Migrations
 
                     b.HasKey("IdOferta");
 
+                    b.HasIndex("EmpresaIdEmpresa");
+
                     b.ToTable("OfertaEmprego");
                 });
 
@@ -224,9 +236,30 @@ namespace APICandidatos.Migrations
                         .HasForeignKey("OfertaEmpregoIdOferta");
                 });
 
+            modelBuilder.Entity("APICandidatos.Model.CV", b =>
+                {
+                    b.HasOne("APICandidatos.Model.Candidato", null)
+                        .WithMany("CVs")
+                        .HasForeignKey("CandidatoIdCandidato");
+                });
+
+            modelBuilder.Entity("APICandidatos.Model.OfertaEmprego", b =>
+                {
+                    b.HasOne("APICandidatos.Model.Empresa", null)
+                        .WithMany("OfertaEmpregos")
+                        .HasForeignKey("EmpresaIdEmpresa");
+                });
+
             modelBuilder.Entity("APICandidatos.Model.Candidato", b =>
                 {
                     b.Navigation("AplicacaoTrabalhos");
+
+                    b.Navigation("CVs");
+                });
+
+            modelBuilder.Entity("APICandidatos.Model.Empresa", b =>
+                {
+                    b.Navigation("OfertaEmpregos");
                 });
 
             modelBuilder.Entity("APICandidatos.Model.OfertaEmprego", b =>

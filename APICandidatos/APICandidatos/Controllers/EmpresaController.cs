@@ -52,14 +52,10 @@ namespace APICandidatos.Controllers
 
         // PUT: api/Empresa/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutEmpresa(int id, Empresa empresa)
+        [HttpPut]
+        public async Task<IActionResult> PutEmpresa(Empresa empresa)
         {
-            if (id != empresa.IdEmpresa)
-            {
-                return BadRequest();
-            }
-
+   
             _context.Entry(empresa).State = EntityState.Modified;
 
             try
@@ -68,7 +64,7 @@ namespace APICandidatos.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EmpresaExists(id))
+                if (!EmpresaExists(empresa.IdEmpresa))
                 {
                     return NotFound();
                 }

@@ -52,14 +52,10 @@ namespace APICandidatos.Controllers
 
         // PUT: api/OfertaEmprego/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutOfertaEmprego(int id, OfertaEmprego ofertaEmprego)
+        [HttpPut]
+        public async Task<IActionResult> PutOfertaEmprego(OfertaEmprego ofertaEmprego)
         {
-            if (id != ofertaEmprego.IdOferta)
-            {
-                return BadRequest();
-            }
-
+           
             _context.Entry(ofertaEmprego).State = EntityState.Modified;
 
             try
@@ -68,7 +64,7 @@ namespace APICandidatos.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!OfertaEmpregoExists(id))
+                if (!OfertaEmpregoExists(ofertaEmprego.IdEmpresa))
                 {
                     return NotFound();
                 }
