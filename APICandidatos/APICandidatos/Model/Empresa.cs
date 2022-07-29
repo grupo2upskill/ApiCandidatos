@@ -15,7 +15,17 @@ namespace APICandidatos.Model
         public string? ZonaAtuacao { get; set; }
         public string? LinkedIn { get; set; }
         public string? Facebook { get; set; }
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 
+=======
+        
+        //public List<OfertaEmprego> OfertaEmpregos { get; set; }
+>>>>>>> Stashed changes
+=======
+        
+        //public List<OfertaEmprego> OfertaEmpregos { get; set; }
+>>>>>>> Stashed changes
     }
 }
