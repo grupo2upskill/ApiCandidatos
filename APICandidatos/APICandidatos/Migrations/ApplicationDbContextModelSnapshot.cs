@@ -44,10 +44,13 @@ namespace APICandidatos.Migrations
 
                     b.HasKey("IdApl");
 
+<<<<<<< Updated upstream
                     b.HasIndex("IdCandidato");
 
                     b.HasIndex("IdOferta");
 
+=======
+>>>>>>> Stashed changes
                     b.ToTable("AplicacaoTrabalho");
                 });
 
@@ -69,12 +72,18 @@ namespace APICandidatos.Migrations
                     b.Property<string>("Facebook")
                         .HasColumnType("nvarchar(max)");
 
+<<<<<<< Updated upstream
                     b.Property<byte[]>("Foto")
                         .HasColumnType("varbinary(max)");
 
                     b.Property<int>("IdCV")
                         .HasColumnType("int");
 
+=======
+                    b.Property<byte[]>("FileCV")
+                        .HasColumnType("varbinary(max)");
+
+>>>>>>> Stashed changes
                     b.Property<string>("LinkedIn")
                         .HasColumnType("nvarchar(max)");
 
@@ -112,6 +121,12 @@ namespace APICandidatos.Migrations
                     b.Property<string>("ExpProfissional")
                         .HasColumnType("nvarchar(max)");
 
+<<<<<<< Updated upstream
+=======
+                    b.Property<int?>("IdCandidatoCv")
+                        .HasColumnType("int");
+
+>>>>>>> Stashed changes
                     b.Property<string>("Interesses")
                         .HasColumnType("nvarchar(max)");
 
@@ -165,6 +180,26 @@ namespace APICandidatos.Migrations
                     b.ToTable("Empresa");
                 });
 
+            modelBuilder.Entity("APICandidatos.Model.Foto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<byte[]>("FotoPerfil")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<int>("IdCandidatoFoto")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Foto");
+                });
+
             modelBuilder.Entity("APICandidatos.Model.OfertaEmprego", b =>
                 {
                     b.Property<int>("IdOferta")
@@ -200,10 +235,9 @@ namespace APICandidatos.Migrations
 
                     b.HasKey("IdOferta");
 
-                    b.HasIndex("IdEmpresa");
-
                     b.ToTable("OfertaEmprego");
                 });
+<<<<<<< Updated upstream
 
             modelBuilder.Entity("APICandidatos.Model.AplicacaoTrabalho", b =>
                 {
@@ -245,6 +279,8 @@ namespace APICandidatos.Migrations
 
                     b.Navigation("Empresa");
                 });
+=======
+>>>>>>> Stashed changes
 #pragma warning restore 612, 618
         }
     }

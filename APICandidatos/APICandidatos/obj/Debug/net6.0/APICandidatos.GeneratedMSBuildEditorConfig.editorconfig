@@ -8,9 +8,17 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = APICandidatos
 build_property.RootNamespace = APICandidatos
+<<<<<<< Updated upstream
 build_property.ProjectDir = C:\Users\jpluc\OneDrive\Documents\UpSkill\Mod4\GitTeste\ApiCandidatos\APICandidatos\APICandidatos\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\jpluc\OneDrive\Documents\UpSkill\Mod4\GitTeste\ApiCandidatos\APICandidatos\APICandidatos
+=======
+build_property.ProjectDir = C:\Users\jpluc\Downloads\ApiCandidatos-FK_test\APICandidatos\APICandidatos\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\jpluc\Downloads\ApiCandidatos-FK_test\APICandidatos\APICandidatos
+>>>>>>> Stashed changes
 build_property._RazorSourceGeneratorDebug = 

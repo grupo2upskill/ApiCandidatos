@@ -1,0 +1,82 @@
+﻿@model IEnumerable<teste_cliente.Models.Candidato>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index Candidatos</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" id="Tabela">
+    <thead>
+        <tr>
+            <th>IdCandidato</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Morada</th>
+            <th>DataNasc</th>
+            
+            <th>LinkedIn</th>
+            <th>Facebook</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.IdCandidato
+                </td>
+                <td>
+                    @item.Nome
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.Telefone
+                </td>
+                <td>
+                    @item.Morada
+                </td>
+                <td>
+                    @item.DataNasc
+                </td>
+               @* <td>
+                    @if (@item.Foto != null)
+                    {
+                        <img class="Foto" object-fit:cover" src="data:foto/*;base64,@(Convert.ToBase64String(@item.Foto))">
+                    }
+                </td>*@
+                <td>
+                    @item.LinkedIn
+                </td>
+                <td>
+                    @item.Facebook
+                </td>
+         
+                    <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.IdCandidato}) |
+                    @Html.ActionLink("Details", "Details", new { id=item.IdCandidato}) |
+                    @Html.ActionLink("Delete", "Delete", new {id=item.IdCandidato}, 
+                    new { onclick = "return confirm('Deseja realmente apagar o perfil do Cliente ?');" })
+                    </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+<script>
+$(document).ready(function () {
+    $('#Tabela').DataTable({
+        pagingType: 'full_numbers',
+    });
+});
+</script>
+}
