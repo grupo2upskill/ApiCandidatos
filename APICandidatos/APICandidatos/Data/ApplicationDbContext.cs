@@ -10,12 +10,15 @@ namespace APICandidatos.Data
 
         }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         public DbSet<AplicacaoTrabalho> AplicacaoTrabalho { get; set; }
         public DbSet<Candidato> Candidato { get; set; }
         public DbSet<CV> CV { get; set; }
         public DbSet<Empresa> Empresa { get; set; }
         public DbSet<OfertaEmprego> OfertaEmprego { get; set; }
 =======
+=======
+>>>>>>> Stashed changes
         public virtual DbSet<AplicacaoTrabalho> AplicacaoTrabalho { get; set; }
         public virtual DbSet<Candidato> Candidato { get; set; }
         public virtual DbSet<CV> CV { get; set; }
@@ -46,6 +49,12 @@ namespace APICandidatos.Data
 
             OnModelCreatingPartial(modelBuilder);
         }
+<<<<<<< Updated upstream
+=======
+
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+    }
+>>>>>>> Stashed changes
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 >>>>>>> Stashed changes

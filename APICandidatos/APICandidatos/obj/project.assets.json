@@ -2068,17 +2068,23 @@
     "version": "1.0.0",
     "restore": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "projectUniqueName": "C:\\Users\\jpluc\\OneDrive\\Documents\\UpSkill\\Mod4\\GitTeste\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
       "projectName": "APICandidatos",
       "projectPath": "C:\\Users\\jpluc\\OneDrive\\Documents\\UpSkill\\Mod4\\GitTeste\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
       "packagesPath": "C:\\Users\\jpluc\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\jpluc\\OneDrive\\Documents\\UpSkill\\Mod4\\GitTeste\\ApiCandidatos\\APICandidatos\\APICandidatos\\obj\\",
 =======
+=======
+>>>>>>> Stashed changes
       "projectUniqueName": "C:\\Users\\jpluc\\Downloads\\ApiCandidatos-FK_test\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
       "projectName": "APICandidatos",
       "projectPath": "C:\\Users\\jpluc\\Downloads\\ApiCandidatos-FK_test\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
       "packagesPath": "C:\\Users\\jpluc\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\jpluc\\Downloads\\ApiCandidatos-FK_test\\APICandidatos\\APICandidatos\\obj\\",
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
       "projectStyle": "PackageReference",
       "fallbackFolders": [

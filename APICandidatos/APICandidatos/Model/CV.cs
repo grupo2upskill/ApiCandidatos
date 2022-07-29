@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ﻿using System.ComponentModel.DataAnnotations;
 
 namespace APICandidatos.Model
@@ -21,6 +22,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace APICandidatos.Model
 {
+=======
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace APICandidatos.Model
+{
+>>>>>>> Stashed changes
 
         [Table("CV")]
         [Index("IdCandidatoCv", Name = "IX_CV_IdCandidato")]
@@ -41,5 +50,8 @@ namespace APICandidatos.Model
             public virtual Candidato IdCandidatoCvNavigation { get; set; }
 
         }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }

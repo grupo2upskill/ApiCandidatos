@@ -45,10 +45,13 @@ namespace APICandidatos.Migrations
                     b.HasKey("IdApl");
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     b.HasIndex("IdCandidato");
 
                     b.HasIndex("IdOferta");
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
                     b.ToTable("AplicacaoTrabalho");
@@ -76,6 +79,7 @@ namespace APICandidatos.Migrations
                     b.Property<byte[]>("Foto")
                         .HasColumnType("varbinary(max)");
 
+<<<<<<< Updated upstream
                     b.Property<int>("IdCV")
                         .HasColumnType("int");
 
@@ -83,6 +87,8 @@ namespace APICandidatos.Migrations
                     b.Property<byte[]>("FileCV")
                         .HasColumnType("varbinary(max)");
 
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                     b.Property<string>("LinkedIn")
                         .HasColumnType("nvarchar(max)");
@@ -122,7 +128,10 @@ namespace APICandidatos.Migrations
                         .HasColumnType("nvarchar(max)");
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
                     b.Property<int?>("IdCandidatoCv")
                         .HasColumnType("int");
 
@@ -238,6 +247,7 @@ namespace APICandidatos.Migrations
                     b.ToTable("OfertaEmprego");
                 });
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
             modelBuilder.Entity("APICandidatos.Model.AplicacaoTrabalho", b =>
                 {
@@ -279,6 +289,8 @@ namespace APICandidatos.Migrations
 
                     b.Navigation("Empresa");
                 });
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 #pragma warning restore 612, 618

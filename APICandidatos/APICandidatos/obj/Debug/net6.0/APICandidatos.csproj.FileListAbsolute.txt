@@ -1571,4 +1571,7 @@ C:\Users\jpluc\Downloads\ApiCandidatos-FK_test\APICandidatos\APICandidatos\obj\D
 C:\Users\jpluc\Downloads\ApiCandidatos-FK_test\APICandidatos\APICandidatos\obj\Debug\net6.0\APICandidatos.pdb
 C:\Users\jpluc\Downloads\ApiCandidatos-FK_test\APICandidatos\APICandidatos\obj\Debug\net6.0\APICandidatos.genruntimeconfig.cache
 C:\Users\jpluc\Downloads\ApiCandidatos-FK_test\APICandidatos\APICandidatos\obj\Debug\net6.0\ref\APICandidatos.dll
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

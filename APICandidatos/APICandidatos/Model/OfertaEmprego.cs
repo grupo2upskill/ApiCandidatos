@@ -7,6 +7,7 @@ namespace APICandidatos.Model
     {
         [Key]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         public int IdOferta { get; set; }
         [Required]
         public int IdEmpresa { get; set; }
@@ -16,6 +17,11 @@ namespace APICandidatos.Model
         public int IdOferta { get; set; }        
 
         public int IdEmpresa { get; set; }
+=======
+        public int IdOferta { get; set; }        
+
+        public int IdEmpresa { get; set; }
+>>>>>>> Stashed changes
         //[ForeignKey("IdEmpresa")]
         //public Empresa Empresa { get; set; }
 

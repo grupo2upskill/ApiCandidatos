@@ -2,6 +2,7 @@
   "format": 1,
   "restore": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "C:\\Users\\jpluc\\OneDrive\\Documents\\UpSkill\\Mod4\\GitTeste\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj": {}
   },
   "projects": {
@@ -13,6 +14,19 @@
         "projectPath": "C:\\Users\\jpluc\\OneDrive\\Documents\\UpSkill\\Mod4\\GitTeste\\ApiCandidatos\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
         "packagesPath": "C:\\Users\\jpluc\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\jpluc\\OneDrive\\Documents\\UpSkill\\Mod4\\GitTeste\\ApiCandidatos\\APICandidatos\\APICandidatos\\obj\\",
+=======
+    "C:\\Users\\jpluc\\Downloads\\ApiCandidatos-FK_test\\APICandidatos\\APICandidatos\\APICandidatos.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\jpluc\\Downloads\\ApiCandidatos-FK_test\\APICandidatos\\APICandidatos\\APICandidatos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jpluc\\Downloads\\ApiCandidatos-FK_test\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
+        "projectName": "APICandidatos",
+        "projectPath": "C:\\Users\\jpluc\\Downloads\\ApiCandidatos-FK_test\\APICandidatos\\APICandidatos\\APICandidatos.csproj",
+        "packagesPath": "C:\\Users\\jpluc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jpluc\\Downloads\\ApiCandidatos-FK_test\\APICandidatos\\APICandidatos\\obj\\",
+>>>>>>> Stashed changes
 =======
     "C:\\Users\\jpluc\\Downloads\\ApiCandidatos-FK_test\\APICandidatos\\APICandidatos\\APICandidatos.csproj": {}
   },

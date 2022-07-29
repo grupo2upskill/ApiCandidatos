@@ -58,19 +58,26 @@ namespace APICandidatos.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCandidato(int id, [Bind("IdCandidato,Nome,Email,Telefone,Morada,DataNasc,LinkedIn,Facebook,FileCV")] Candidato candidato)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         {
             try
             {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 return RedirectToAction(nameof(Index));
 =======
+=======
+>>>>>>> Stashed changes
                 _context.Update(candidato);
                 await _context.SaveChangesAsync();
 >>>>>>> Stashed changes
             }
             catch
             {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
                 return View();
             }
@@ -79,6 +86,8 @@ namespace APICandidatos.Controllers
         // GET: CandidatoController/Edit/5
         public ActionResult Edit(int id)
 =======
+=======
+>>>>>>> Stashed changes
                 if (!CandidatoExists(candidato.IdCandidato))
                 {
                     return NotFound();
@@ -95,6 +104,9 @@ namespace APICandidatos.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Candidato>> PostCandidato([Bind("IdCandidato,Nome,Email,Telefone,Morada,MSSQL_DroppedLedgerColumn_IdCV_6391BEEC1FF44B4DADB858C1623BE4F9,DataNasc,MSSQL_DroppedLedgerColumn_Foto_8FC802CAF17540BBA6D015DD768153C4,LinkedIn,Facebook,ledger_start_transaction_id,ledger_end_transaction_id,ledger_start_sequence_number,ledger_end_sequence_number,FileCV")] Candidato candidato)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         {
             return View();
@@ -118,15 +130,23 @@ namespace APICandidatos.Controllers
             if (candidato != null)
             {
                 _context.Candidato.Remove(candidato);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             }
         }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         // GET: CandidatoController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
+=======
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+>>>>>>> Stashed changes
 =======
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
